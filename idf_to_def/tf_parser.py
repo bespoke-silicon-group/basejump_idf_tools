@@ -41,7 +41,7 @@ tf_value = Literal('"').suppress() + Optional(Word(alphanums+'_ '))('value') + L
 
 tf_section = Group(                                                                                                                                \
                Word(alphanums+'_')('name')                                                                                                         \
-               + Optional(Literal('"').suppress() + Word(alphanums+'_ ')('value') + Literal('"').suppress())                                       \
+               + Optional(Optional(Literal('"').suppress()) + Word(alphanums+'-_ ')('value') + Optional(Literal('"').suppress()))                   \
                + Literal('{').suppress() + Group(OneOrMore(Group(tf_key + Literal('=').suppress() + tf_value)))('items') + Literal('}').suppress() \
              )
 
