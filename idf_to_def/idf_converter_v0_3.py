@@ -237,7 +237,7 @@ def __extract_data_from_tf_dict( tf, max_metal_layers=-1 ):
             l = {}
             l['name']       = s['value']
             l['minWidth']   = int(float(list(filter(lambda d: d['key'] == 'minWidth',   s['items']))[0]['value'])*1000)
-            l['maxWidth']   = int(float(list(filter(lambda d: d['key'] == 'maxWidth',   s['items']))[0]['value'])*1000)
+            #l['maxWidth']   = int(float(list(filter(lambda d: d['key'] == 'maxWidth',   s['items']))[0]['value'])*1000)
             l['minSpacing'] = int(float(list(filter(lambda d: d['key'] == 'minSpacing', s['items']))[0]['value'])*1000)
             layers[int(match.group(1))] = l
   layers = [l for l in layers if l]
